@@ -17,8 +17,17 @@ app.engine('hbs', hbs({
   // layoutsDir: path.join(__dirname, 'views/layouts')
 }));
 
-app.get('/', function (req, res) {
-  res.render('index', { weather: null, error: null });
+app.get('/', (req, res) => {
+  request("https://pokeapi.co/api/v2/pokemon/", function (error, response, body) {
+    console.error('error:', error); 
+    console.log('statusCode:', response && response.statusCode);
+    const parsedData = JSON.parse(body);
+    console.log(parsedData["name"]); 
+    console.log(parsedData.results);
+    res.render("index", {
+      "pokemon": JSON.stringify(parsedData.results, null, 4)
+    })
+  });
 });
 
 app.listen(port, () => console.log(`App is listening on port ${port}!`));
