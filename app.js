@@ -30,4 +30,21 @@ app.get('/', (req, res) => {
   });
 });
 
+(function () {
+  const myTable = $("pokeTable").html();
+
+  const myTable = handlebars.compile(myTable);
+
+  const Pokemon = [
+    {"Nunber": 1, "Name": "Bulbaseur", "Ability": "Poison", "Adittional Info": "blah"},
+  ];
+
+});
+// $(function () {
+//   const myTable = $("#pokeTable").html();
+//   const myTable = Handlebars.compile(myTable);
+
+//   const 
+// })
+
 app.listen(port, () => console.log(`App is listening on port ${port}!`));
