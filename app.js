@@ -30,16 +30,16 @@ app.get('/', (req, res) => {
   });
 });
 
-(function () {
-  const myTable = $("pokeTable").html();
+// (function () {
+//   const myTable = $("pokeTable").html();
 
-  const myTable = handlebars.compile(myTable);
+//   const myTable = handlebars.compile(myTable);
 
-  const Pokemon = [
-    {"Nunber": 1, "Name": "Bulbaseur", "Ability": "Poison", "Adittional Info": "blah"},
-  ];
+//   const Pokemon = [
+//     {"Nunber": 1, "Name": "Bulbaseur", "Ability": "Poison", "Adittional Info": "blah"},
+//   ];
 
-});
+// });
 // $(function () {
 //   const myTable = $("#pokeTable").html();
 //   const myTable = Handlebars.compile(myTable);
