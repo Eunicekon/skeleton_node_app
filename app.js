@@ -23,11 +23,6 @@ app.get('/', (req, res) => {
       const parseData = JSON.parse(body);
       console.log(parseData.results + 'and has this power' + parseData.ability.name);
     }
-    // console.error('error:', error); 
-    // console.log('statusCode:', response && response.statusCode);
-    // const parsedData = JSON.parse(body);
-    // // console.log(parsedData["name"]); 
-    // console.log(parsedData.results);
     res.render("index")
   });
 });
