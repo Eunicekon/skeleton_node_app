@@ -17,8 +17,28 @@ app.engine('hbs', hbs({
   // layoutsDir: path.join(__dirname, 'views/layouts')
 }));
 
-app.get('/', function (req, res) {
-  res.render('index', { weather: null, error: null });
+app.get('/', (req, res) => {
+  request("https://pokeapi.co/api/v2/pokemon/", function (error, response, body) {
+    if (!error && response.statusCode == 200){
+      const parseData = JSON.parse(body);
+      console.log(parseData.results + 'and has this power' + parseData.ability.name);
+    }
+    // console.error('error:', error); 
+    // console.log('statusCode:', response && response.statusCode);
+    // const parsedData = JSON.parse(body);
+    // // console.log(parsedData["name"]); 
+    // console.log(parsedData.results);
+    res.render("index")
+  });
 });
+
+app.get ('/lowestNumber', (function(req, res){
+  res.render("lowestNumber");
+}));
+
+app.get ('/surprise', (function(req, res){
+  res.render("surprise");
+}));
+
 
 app.listen(port, () => console.log(`App is listening on port ${port}!`));
