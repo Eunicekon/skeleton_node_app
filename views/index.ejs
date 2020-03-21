@@ -15,11 +15,28 @@
         </div>
         </div>
       <div id="container__2">
-        <h1>Name - URL</h1>
-        <div id="mainData">      
-          <% countData["results"].forEach(function(Pokemon) { %>
-            <li><%= Pokemon["name"] %> - <%= Pokemon["url"] %></li>
-          <% }) %>
+        <div id="mainData">          
+          <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>URL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><% countData["results"].forEach(function(Pokemon) { %>
+                      <%= Pokemon["name"] %>
+                    <% }) %>
+                  </td>
+                    <td>
+                      <% countData["results"].forEach(function(Pokemon) { %>
+                        <%= Pokemon["url"] %>
+                      <% }) %>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
         </div>
         <p id="selected_poke"></p>
       </div>

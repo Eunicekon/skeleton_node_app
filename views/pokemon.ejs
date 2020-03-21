@@ -7,10 +7,10 @@
 </head>
 <body>
     <h1>Bulbasaur content</h1>
-    <% gameData["stats"].forEach(function(pokeInform) { %>
-        <li>Stats are: <%= pokeInform["base_stat"] %></li>
+    <% gameData["sprites"].forEach(function(pokeInform) { %>
+        <li><%= pokeInform["back_default"] %></li>
         <br>
-        <li>Efforts are: <%=pokeInform["effort"] %></li>
+        <li><%=pokeInform["effort"] %></li>
     <% }) %>
 </body>
 </html>
