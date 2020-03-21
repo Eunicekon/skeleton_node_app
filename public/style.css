@@ -1,12 +1,29 @@
+body {
+    background-image: url('https://images3.alphacoders.com/273/thumb-1920-273289.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: rgb(83, 83, 243);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.5em;
+    margin: auto;
+    border: 2px grey;
+    padding: 50px;
+}
 
-/* body{
+#container__1 {
     text-align: center;
-}
-h1{
-    color: gray;
+    padding: 50px;
 }
 
+#container__2 {
+    display: grid;
+    grid-template-columns: 50fr 50fr; /* thr fr stands for fraction*/
+    text-align: center;
+    padding: 50px;
+}
 
-table, th, td {
-    border: 1px solid black;
-  } */
+th {
+    font-size: 1.5em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
