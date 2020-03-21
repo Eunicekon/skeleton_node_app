@@ -27,3 +27,11 @@ th {
     font-size: 1.5em;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+#searchPoke {
+    background-color: khaki;
+}
+
+#clickMe {
+    background-color: khaki;
+}

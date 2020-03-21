@@ -7,7 +7,7 @@ const request = require('request');
 app.use(bodyParser.urlencoded({ extended: true }));  
 app.use(express.static('public'));                
 
-app.get('/', (req, res) => {
+app.get('/pokemon', (req, res) => {
   const query = req.query.search;
   const url = "https://pokeapi.co/api/v2/pokemon/?offset=" + query;
   request(url, function (error, response, body) {
@@ -18,8 +18,8 @@ app.get('/', (req, res) => {
   });
 });
 
-app.get('/pokemon', function(req, res){
-  res.render("table");
+app.get('/', function(req, res){
+  res.render("Search");
 });
 
 app.get('/bulbasaur', function (req, res){
