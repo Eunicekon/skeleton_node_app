@@ -8,42 +8,36 @@
   <body>
     <form action="/" method="post">
       <div id="container__1">
-        <div>
-          <h1>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png" alt="logo" width="300" height="100">
-          </h1>
-        </div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png" alt="logo" width="300" height="100">
       </div>
-      <br>
       <div container__3>
         <input type="text" id="searchPoke" placeholder="Search pokemon" name="search">
         <br>
         <button id="clickMe">Submit</button>
       </div>
       <div id="container__2">
-        <div id="mainData">          
-          <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>URL</th>
-                </tr>
-            </thead>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>URL</th>
+            </tr>
+          </thead>
             <tbody>
-                <tr>
-                    <td><% countData["results"].forEach(function(Pokemon) { %>
-                      <%= Pokemon["name"] %>
-                    <% }) %>
-                  </td>
-                    <td>
-                      <% countData["results"].forEach(function(Pokemon) { %>
-                        <%= Pokemon["url"] %>
-                      <% }) %>
-                    </td>
-                </tr>
+              <tr>
+                <td>
+                  <% countData["results"].forEach(function(Pokemon) { %>
+                  <%= Pokemon["name"] %>
+                  <% }) %>
+                </td>
+                <td>
+                  <% countData["results"].forEach(function(Pokemon) { %>
+                  <%= Pokemon["url"] %>
+                  <% }) %>
+                </td>
+              </tr>
             </tbody>
         </table>
-        </div>
       </div>
     </form>
     <script src="main.js"></script>
