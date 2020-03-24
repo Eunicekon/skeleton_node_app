@@ -7,10 +7,8 @@ const request = require('request');
 app.use(bodyParser.urlencoded({ extended: true }));  
 app.use(express.static('public'));                
 
-app.get('/pokemon', (req, res) => {
-  const query = req.query.search;
-  const url = "https://pokeapi.co/api/v2/pokemon/?offset=" + query;
-  request(url, function (error, response, body) {
+app.get('/', (req, res) => {
+  request("https://pokeapi.co/api/v2/pokemon/?offset=", function (error, response, body) {
     if(!error && response.statusCode == 200){
       const countData = JSON.parse(body)
       res.render("index", {countData: countData});
@@ -18,15 +16,11 @@ app.get('/pokemon', (req, res) => {
   });
 });
 
-app.get('/', function(req, res){
-  res.render("Search");
-});
-
 app.get('/bulbasaur', function (req, res){
   request("https://pokeapi.co/api/v2/pokemon/bulbasaur", function(error, response, body){
   if(!error && response.statusCode == 200){
     const gameData = JSON.parse(body)
-    res.render("pokemon", {gameData: gameData});
+    res.render("result", {gameData: gameData});
   }
   })
 });

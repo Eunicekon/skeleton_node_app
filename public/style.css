@@ -11,7 +11,7 @@ body {
     padding: 50px;
 }
 
-#container__1 {
+#container__1, h1 {
     text-align: center;
     padding: 50px;
 }
