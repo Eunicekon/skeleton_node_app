@@ -11,7 +11,7 @@ body {
     padding: 50px;
 }
 
-#container__1, h1 {
+#container__1 {
     text-align: center;
     padding: 50px;
 }
@@ -20,6 +20,7 @@ body {
     display: grid;
     grid-template-columns: 50fr 50fr; /* thr fr stands for fraction*/
     text-align: center;
+    /* border: 2px solid grey; */
     padding: 50px;
 }
 
@@ -35,3 +36,7 @@ th {
 #clickMe {
     background-color: khaki;
 }
+
+
+/* BULBASAUR PAGE CSS WORK */
+
