@@ -7,7 +7,7 @@ const request = require('request');
 app.use(bodyParser.urlencoded({ extended: true }));  
 app.use(express.static('public'));                
 
-app.get('/pokemon', (req, res) => {
+app.get('/', (req, res) => {
   const query = req.query.search;
   const url = "https://pokeapi.co/api/v2/pokemon/?offset=" + query;
   request(url, function (error, response, body) {
@@ -18,7 +18,7 @@ app.get('/pokemon', (req, res) => {
   });
 });
 
-app.get('/', function(req, res){
+app.get('/search', function(req, res){
   res.render("Search");
 });
 
@@ -28,7 +28,7 @@ app.get('/bulbasaur', function (req, res){
     const gameData = JSON.parse(body)
     res.render("pokemon", {gameData: gameData});
   }
-  })
+  });
 });
 
 //defining my route to call the html file
