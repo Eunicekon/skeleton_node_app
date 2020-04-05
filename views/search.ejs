@@ -2,36 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eunice_taskII</title>
+    <title>Eunice_task_II</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
     <h1>Search for pokemon</h1>
     <form action="/" method="GET">
         <input type="text" placeholder="search pokemon" name="search">
         <input type="submit">
-    </form>
-    <table >
-        <tr> 
-            <th>Firstname</th> 
-            <th>Lastname</th> 
-            <th>Age</th> 
-        </tr> 
-        <tr> 
-            <td>Priya</td> 
-            <td>Sharma</td> 
-            <td>24</td> 
-        </tr> 
-        <tr> 
-            <td>Arun</td> 
-            <td>Singh</td> 
-            <td>32</td> 
-        </tr> 
-        <tr> 
-            <td>Sam</td> 
-            <td>Watson</td> 
-            <td>41</td> 
-        </tr>       
-    </table>
+    </form> 
+    <h1>
+        <% gameData["forms"].forEach(function(Pokemon) { %>
+            <%= Pokemon["name"] %>
+            <% }) %>
+    </h1>
+    <p>
+        <%= gameData.sprites["front_shiny"] %>
+    </p>
+    <p>
+        <% gameData["forms"].forEach(function(Pokemon) { %>
+            <%= Pokemon["name"] %> - <%= Pokemon["url"] %>
+            <% }) %>
+    </p>
+    <script src="main.js"></script>   
 </body>
 </html>
+
+

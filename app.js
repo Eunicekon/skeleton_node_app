@@ -8,9 +8,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));                
 
 app.get('/', (req, res) => {
-  const query = req.query.search;
-  const url = "https://pokeapi.co/api/v2/pokemon/?offset=" + query;
-  request(url, function (error, response, body) {
+  request("https://pokeapi.co/api/v2/pokemon/?offset=", function (error, response, body) {
     if(!error && response.statusCode == 200){
       const countData = JSON.parse(body)
       res.render("index", {countData: countData});
@@ -22,7 +20,7 @@ app.get('/search', function(req, res){
   request("https://pokeapi.co/api/v2/pokemon/1", function(error, response, body){
     if(!error && response.statusCode == 200){
       const gameData = JSON.parse(body)
-      res.render("Search");
+      res.render("Search", {gameData: gameData});
     }
   });
 });
