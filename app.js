@@ -8,7 +8,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));                
 
 app.get('/', (req, res) => {
-  request("https://pokeapi.co/api/v2/pokemon/?offset=", function (error, response, body) {
+  const query = req.query.search;
+  const url = "https://pokeapi.co/api/v2/pokemon/?offset=" + query;
+  request(url, function (error, response, body) {
     if(!error && response.statusCode == 200){
       const countData = JSON.parse(body)
       res.render("index", {countData: countData});
