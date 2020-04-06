@@ -18,6 +18,9 @@ app.get('/', (req, res) => {
   });
 });
 
+app.get('/pokemon', function(req, res){
+  res.render("pokemon")
+})
 
 //defining my route to call the html file
 app.set('view engine', 'ejs');                   
