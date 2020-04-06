@@ -5,7 +5,7 @@ console.log(gameData);
 
 const pokeData = () => { 
     const promises = [];
-    for(let i = 1; i < 20; i++) {
+    for(let i = 1; i < 21; i++) {
     const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
     promises.push(fetch(url).then((res) => res.json()));
     }
