@@ -16,15 +16,6 @@ app.get('/', (req, res) => {
   });
 });
 
-app.get('/search', function(req, res){
-  request("https://pokeapi.co/api/v2/pokemon/1", function(error, response, body){
-    if(!error && response.statusCode == 200){
-      const gameData = JSON.parse(body)
-      res.render("Search", {gameData: gameData});
-    }
-  });
-});
-
 app.get('/pokemon', function(req, res){
   res.render("pokemon")
 })
