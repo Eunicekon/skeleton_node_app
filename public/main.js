@@ -11,18 +11,18 @@ const pokeData = () => {
     }
 
     Promise.all(promises).then((results) => {
-        const pokemon = results.map((data) =>({
+        const bulbaPoke = results.map((data) =>({
             name: data.name,
             id: data.id,
             image: data.sprites['front_shiny'],
         }));
-            myPokemon(pokemon);
+            myPokemon(bulbaPoke);
     });
 };
 
-const myPokemon = (pokemon) => {
-    console.log(pokemon);
-    const pokemonhtmlstring = pokemon.map (poke_mon =>`
+const myPokemon = (bulbaPoke) => {
+    console.log(bulbaPoke);
+    const pokemonhtmlstring = bulbaPoke.map (poke_mon =>`
         <tbody>
         <tr>
             <td><img src="${poke_mon.image}" </td>
