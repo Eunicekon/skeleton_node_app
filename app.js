@@ -16,6 +16,15 @@ app.get('/', (req, res) => {
     });
   });
 
+app.get('/Bulbasaur', (req, res) => {
+   request("https://pokeapi.co/api/v2/pokemon/1", function (error, response, body) {
+    if (!error && response.statusCode == 200){
+      const countData = JSON.parse(body)
+      res.render("bulbaPage");
+      }
+    });
+  });
+
 //defining my route to call the html file
 app.set('view engine', 'ejs');                   
 
