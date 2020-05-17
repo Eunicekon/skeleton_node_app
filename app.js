@@ -17,10 +17,10 @@ app.get('/', (req, res) => {
   });
 
 app.get('/Bulbasaur', (req, res) => {
-   request("https://pokeapi.co/api/v2/pokemon/1", function (error, response, body) {
+  request("https://pokeapi.co/api/v2/pokemon/1", function (error, response, body) {
     if (!error && response.statusCode == 200){
       const countData = JSON.parse(body)
-      res.render("bulbaPage");
+      res.render("bulbaPage.ejs");
       }
     });
   });
