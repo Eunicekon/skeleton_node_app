@@ -1,5 +1,3 @@
-
-
 const gameData = document.getElementById("gameData");
 console.log(gameData);
 
@@ -35,3 +33,16 @@ const myPokemon = (bulbaPoke) => {
 };
 
 pokeData();
+
+
+const navPosition = () => {
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li');
+    
+    burger.addEventListener('click', () => {
+        nav.classList.toggle('nav-active');
+    });
+}
+
+navPosition();
