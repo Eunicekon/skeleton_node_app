@@ -42,7 +42,6 @@ nav{
 }
 
 .burger {
-    display: none;
     cursor: pointer;
 }
 
@@ -98,3 +97,5 @@ nav{
 
     }
 }
+
+
